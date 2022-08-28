@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  ytapi:
+    container_name: "Youtube API"
+    build: .
+    ports:
+      - "3000:3000"
+  db:
+    container_name: "YouTube API Database"
+    image: mongo:latest
+    ports:
+      - "27017:27017"
