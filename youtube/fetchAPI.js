@@ -46,6 +46,6 @@ module.exports.fetchYouTubeVids = async () => {
       metadata["thumbnail"] = vid.snippet.thumbnails.high.url;
       metadataList.push(metadata);
     });
-    await videoModel.updateMany(metadataList);
+    await videoModel.insertMany(metadataList);
   } catch (e) {}
 };
