@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ytAPI-deployment
+  labels:
+    app: ytAPI
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ytAPI
+  template:
+    metadata:
+      labels:
+        app: ytAPI
+    spec:
+      containers:
+        - name: fampay-backend_ytapi
+          image: fampay-backend_ytapi
+          ports:
+            - containerPort: 3000
+        - name: fampay-backend_ytapi-db
+          image: mongo:latest
+          ports:
+            - containerPort: 3000

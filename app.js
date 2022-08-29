@@ -40,10 +40,11 @@ app.get("/", async function (req, res) {
 // Video Reroute
 app.use("/videos", videoRoutes);
 
-//Fetching Youtube API , every 1 minute
+// Fetching the youtube API once every minute 
 setInterval(fetchYouTubeVids, 60000);
 
-//Setting up database and backend Server
+// Here we use PORT defined by the user in the .env file
+// Or we use the default
 const PORT = process.env.PORT || 8000;
 const MONGO_URI = process.env.MONGO_URI;
 mongoose
